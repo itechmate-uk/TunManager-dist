@@ -2,7 +2,7 @@
 
 Since v0.1.29.
 
-Tunnel Manager does not have a file manager of its own. Instead, it opens the
+TunManager does not have a file manager of its own. Instead, it opens the
 profile's server in programs you already use, such as WinSCP, an rclone drive or
 VS Code, and signs them in for you where it can.
 
@@ -39,9 +39,9 @@ v0.1.35). If the program is not installed, the location line says NOT FOUND, and
 opening it offers the download page. Its **Options** tab holds the program's own
 settings and an **Extra command-line options** box.
 
-**When Tunnel Manager quits or crashes** (since v0.1.37; WinSCP, rclone mount and
+**When TunManager quits or crashes** (since v0.1.37; WinSCP, rclone mount and
 linked programs): in the program's form, choose **Keep running on their own**
-(default) or **Close with Tunnel Manager**. Closing asks the program to end
+(default) or **Close with TunManager**. Closing asks the program to end
 first, so rclone unmounts the drive; anything still running after 10 seconds is
 closed. VS Code and the Linux file manager always keep running: they open the
 folder in their own running window.
@@ -50,15 +50,15 @@ folder in their own running window.
 
 | Kind | Sign-in |
 |---|---|
-| **Supported program** | Tunnel Manager signs it in with the profile's login: its own key (managed key), or the password it holds for this session or in the OS credential vault. |
+| **Supported program** | TunManager signs it in with the profile's login: its own key (managed key), or the password it holds for this session or in the OS credential vault. |
 | **Linked program** | Any other program. It gets the server's address and asks for the login itself. |
 
-Tunnel Manager never puts a password on a command line, in an address, or in a
+TunManager never puts a password on a command line, in an address, or in a
 file the program keeps.
 
 ## Supported programs
 
-| Program | Computers | With Tunnel Manager's key | With your system OpenSSH keys | With a saved password |
+| Program | Computers | With TunManager's key | With your system OpenSSH keys | With a saved password |
 |---|---|---|---|---|
 | **WinSCP** | Windows | Signs in with a PuTTY copy of the key (`.ppk`) | Signs in with a PuTTY copy of your key (since v0.1.32) | Signs in. The password goes through a private file that is deleted after 2 minutes |
 | **rclone mount** | Windows, macOS, Linux | Signs in | Signs in with your key (since v0.1.32) | Signs in. The password goes to rclone directly, never to a file |
@@ -66,12 +66,12 @@ file the program keeps.
 | **File manager** | Linux | Signs in, once the key is in the system SSH config (Auth...) | Signs in through your SSH config | The file manager asks |
 
 **System OpenSSH keys:** for a profile set to "Use system OpenSSH config and
-keys", Tunnel Manager asks your OpenSSH which server, user and key it would use
+keys", TunManager asks your OpenSSH which server, user and key it would use
 (`ssh -G`), so a `Host` name from your own `.ssh\config` works. WinSCP gets a
 PuTTY copy of the first key without a passphrase, kept in
 `.ssh\tunnel-manager\system-keys\`; nothing is written beside your key. A key
 with a passphrase can't be used this way: WinSCP then asks for the password, and
-Tunnel Manager says why.
+TunManager says why.
 
 Not yet supported:
 - WinSCP and rclone mount with profiles that use a jump host; use the Terminal or
@@ -122,7 +122,7 @@ Download: [winscp.net](https://winscp.net/eng/download.php).
 - **Access:** read and write, or read only.
 - **Drive type** (Windows): local, or a network drive.
 - **Extra command-line options:** any other rclone flags, for example
-  `--dir-cache-time 5s`. They come last, so they win over Tunnel Manager's.
+  `--dir-cache-time 5s`. They come last, so they win over TunManager's.
 
 On Windows, rclone 1.69 and later may print `ERROR : symlinks not supported
 without the --links flag: /` as the mount starts. The mount works all the same.
@@ -146,7 +146,7 @@ You do not need an `rclone.conf` for this. If your `rclone.conf` holds passwords
 **Opens:** a folder of the server in VS Code with the Remote-SSH extension.
 
 **Needs one of:**
-- a Tunnel Manager key on the profile, added with **Auth... > Add managed key to
+- a TunManager key on the profile, added with **Auth... > Add managed key to
   system SSH config**;
 - a profile on your system OpenSSH config and keys, without its own SSH port (or
   with a `Host` entry for it in your `.ssh\config`).
@@ -165,7 +165,7 @@ Download: [VS Code](https://code.visualstudio.com/download) and its
 as `sftp://`.
 
 **Sign-in:** with the profile's key in the system SSH config (Auth...), it uses
-Tunnel Manager's key; a profile on your system OpenSSH config uses your keys.
+TunManager's key; a profile on your system OpenSSH config uses your keys.
 Otherwise it asks for the password.
 
 ## Working as root
@@ -223,7 +223,7 @@ For example, FileZilla with the arguments `{url}`. The program asks for the
 password itself.
 
 **A program that reads your OpenSSH config** (for example one built on `ssh`)
-can sign in with Tunnel Manager's key: choose **Auth... > Add managed key to
+can sign in with TunManager's key: choose **Auth... > Add managed key to
 system SSH config** for the profile, and pass `{alias}` to the program.
 
 ## Logins without file access
@@ -256,5 +256,5 @@ credential vault.
 ## More programs
 
 Supported programs are added release by release. A program is supported only
-when Tunnel Manager can give it the login without the password appearing on a
+when TunManager can give it the login without the password appearing on a
 command line. Until then it can always be added as a linked program.

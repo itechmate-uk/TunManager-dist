@@ -15,7 +15,7 @@ bundle can describe:
 
 Bundles are declarative text. They cannot contain passwords, passphrases,
 private keys, arbitrary SSH options, local executable launches, or local
-actions. Tunnel Manager previews and validates imported values before saving.
+actions. TunManager previews and validates imported values before saving.
 
 ## Remote Service Management
 

@@ -2,7 +2,7 @@
 
 ## Authentication Order
 
-Tunnel Manager first uses the current user's normal system OpenSSH setup:
+TunManager first uses the current user's normal system OpenSSH setup:
 
 - `~/.ssh/config` or the Windows OpenSSH equivalent;
 - private keys and certificates;
@@ -17,7 +17,7 @@ server does not trigger a misleading password prompt.
 ## Password Retention
 
 - **One attempt:** use the password once, then discard it.
-- **Current session:** retain only in Tunnel Manager process memory. This is
+- **Current session:** retain only in TunManager process memory. This is
   the default.
 - **OS credential vault:** persist only after successful authentication using
   Windows Credential Manager, macOS Keychain, or Linux Secret Service.
@@ -27,16 +27,16 @@ command arguments, logs, or support bundles.
 
 ## Managed Key
 
-After a successful password login, Tunnel Manager can offer to create a
+After a successful password login, TunManager can offer to create a
 dedicated Ed25519 key for the profile. It installs only the public key on the
 remote account and verifies key-only login before changing the profile.
 
-The key belongs to the current local OS user and profile. Tunnel Manager does
+The key belongs to the current local OS user and profile. TunManager does
 not overwrite default SSH keys, disable password login, or edit `sshd_config`.
 It changes your OpenSSH config only if you choose **Auth... > Add managed key to
 system SSH config** for the profile.
 
-To use the managed key outside Tunnel Manager:
+To use the managed key outside TunManager:
 - **Terminal button:** opens the profile in a terminal, already signed in.
 - **Auth... > Add managed key to system SSH config:** lets `ssh`, `scp` and VS
   Code use the key.
@@ -49,18 +49,18 @@ See [Opening A Terminal And Using Managed Keys Everywhere](terminal-and-ssh-conf
 ## Tunnel-Only Accounts (Key Handoff)
 
 Some accounts may only open tunnels and have no shell over SSH, for example a
-supervised AgentW account. Tunnel Manager cannot install a key on such an
-account by itself. The application behind the tunnel tells Tunnel Manager
+supervised AgentW account. TunManager cannot install a key on such an
+account by itself. The application behind the tunnel tells TunManager
 what its session supports:
 
 - If the application **offers a key handoff**, managed-key setup works as
-  usual. Tunnel Manager creates the key on this computer and hands only the
+  usual. TunManager creates the key on this computer and hands only the
   public key to the application through the tunnel. The application installs
-  it, limited to tunnels, and Tunnel Manager verifies key-only login before
+  it, limited to tunnels, and TunManager verifies key-only login before
   switching the profile. The private key never leaves this computer. If the
   application says the key waits for approval, the profile keeps its password
   until you run key setup again after approval.
-- If it does **not**, Tunnel Manager does not offer a dedicated key for that
+- If it does **not**, TunManager does not offer a dedicated key for that
   profile, and the Authentication panel shows the application's reason.
 
 Removing the dedicated key from the Authentication panel asks the application

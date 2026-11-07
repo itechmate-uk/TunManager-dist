@@ -5,9 +5,9 @@ secrets in a public issue.
 
 Verify every downloaded archive against the `SHA256SUMS.txt` attached to the
 same GitHub release. Release artifacts are produced from reviewed version tags
-in the Tunnel Manager source repository.
+in the TunManager source repository.
 
-Tunnel Manager `v0.1.9` was withdrawn after Microsoft Defender reported
+TunManager `v0.1.9` was withdrawn after Microsoft Defender reported
 `Trojan:Win32/Wacatac.B!ml` for its Windows executable. Do not restore or
 redistribute it. Current releases are gated by a Microsoft Defender scan of
 the exact Windows package before publication.

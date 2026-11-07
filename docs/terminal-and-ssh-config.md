@@ -10,9 +10,9 @@ profile's SSH login in a terminal, already signed in where possible:
 
 | Profile signs in with | The terminal |
 |---|---|
-| Tunnel Manager's key (managed key) | Signs in without a password. |
-| A password or key passphrase Tunnel Manager holds (for this session, or saved in the OS credential vault) | Tunnel Manager supplies it once. It is never shown or put on a command line. |
-| A password Tunnel Manager does not hold | ssh asks for it in the terminal. |
+| TunManager's key (managed key) | Signs in without a password. |
+| A password or key passphrase TunManager holds (for this session, or saved in the OS credential vault) | TunManager supplies it once. It is never shown or put on a command line. |
+| A password TunManager does not hold | ssh asks for it in the terminal. |
 | Your own OpenSSH keys | Uses them, as any terminal does. |
 
 **When ssh asks something else**, such as whether to trust a new server's host key
@@ -42,14 +42,14 @@ Choose it in **SSH Settings > Terminal**. The choice applies to this computer on
 ### PuTTY
 
 **Finding PuTTY:** set the location of `putty.exe` in SSH Settings > Terminal.
-Left blank, Tunnel Manager looks on PATH and in `Program Files\PuTTY`.
+Left blank, TunManager looks on PATH and in `Program Files\PuTTY`.
 
 **How PuTTY signs in:**
 - **Profiles with a managed key:** PuTTY cannot read OpenSSH key files, so Tunnel
   Manager makes a PuTTY copy of the key next to it (`...\.ssh\tunnel-manager\
   PROFILE_ed25519.ppk`). It updates the copy when the key changes, and deletes it
   when you remove the key.
-- **Password profiles:** PuTTY asks for the password itself. Tunnel Manager does
+- **Password profiles:** PuTTY asks for the password itself. TunManager does
   not pass it, because PuTTY could only take it on its command line, where other
   programs on the computer can read it.
 
@@ -58,14 +58,14 @@ Left blank, Tunnel Manager looks on PATH and in `Program Files\PuTTY`.
 - **A managed key with a passphrase:** it gets no PuTTY copy. Choose another
   terminal, or convert the key with PuTTYgen.
 
-### When Tunnel Manager quits or crashes
+### When TunManager quits or crashes
 
 Since v0.1.37, **SSH Settings > Terminal** asks what happens to the Terminal (and
-PuTTY) windows Tunnel Manager opened when Tunnel Manager quits or crashes:
+PuTTY) windows TunManager opened when TunManager quits or crashes:
 - **Keep running on their own** (default): they stay open, whatever happens to
-  Tunnel Manager.
-- **Close with Tunnel Manager:** they close when Tunnel Manager quits, crashes or
-  restarts for an update. The window first says Tunnel Manager has ended; ssh gets
+  TunManager.
+- **Close with TunManager:** they close when TunManager quits, crashes or
+  restarts for an update. The window first says TunManager has ended; ssh gets
   10 seconds to end before it is closed.
 
 Open with programs have the same setting in their own forms
@@ -74,7 +74,7 @@ Open with programs have the same setting in their own forms
 ## Add Managed Key To System SSH Config
 
 **What it does:** your own terminals, `scp` and VS Code Remote-SSH don't know about
-Tunnel Manager's keys, so they ask for a password. Choose **Auth... > Add managed
+TunManager's keys, so they ask for a password. Choose **Auth... > Add managed
 key to system SSH config** for a profile, and they use its key too:
 - `ssh proxmox` connects with the profile's server, user, port, jump host and key.
   The name is the profile name in lower case; the reply shows it.
@@ -86,22 +86,22 @@ the key is in the system SSH config. (Before v0.1.32 this was one setting for al
 profiles in SSH Settings > Terminal; if you had it on, those profiles stay added.)
 
 **What it changes on your computer:**
-- Tunnel Manager writes its entries to its own file, `.ssh\tunnel-manager\
+- TunManager writes its entries to its own file, `.ssh\tunnel-manager\
   ssh_config`.
 - It adds two lines at the top of your `.ssh\config`: a comment, and `Include
   tunnel-manager/ssh_config`.
 - The first time it changes an existing `.ssh\config`, it keeps a copy as
   `.ssh\config.tunnel-manager-backup`.
 - Nothing else in your file changes. If your own config already uses a name,
-  Tunnel Manager picks another (`proxmox-tm`).
+  TunManager picks another (`proxmox-tm`).
 
 **It follows your profiles:**
 - Removing the key, or switching the profile to a password, removes it.
 - Renaming or deleting the profile renames or removes its entry.
 - Replacing the key needs no change.
 
-Don't edit Tunnel Manager's file; it is rewritten. Keep your own entries in
+Don't edit TunManager's file; it is rewritten. Keep your own entries in
 `.ssh\config`.
 
-**Removing the last profile** removes the two lines and Tunnel Manager's file, so
+**Removing the last profile** removes the two lines and TunManager's file, so
 your `.ssh\config` is back as it was.

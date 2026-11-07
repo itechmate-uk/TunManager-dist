@@ -9,14 +9,14 @@ successful.
 
 ## Local Port Is In Use
 
-Choose another local port. If Tunnel Manager identifies a matching external
+Choose another local port. If TunManager identifies a matching external
 OpenSSH `-L` listener, it may offer **Reuse Port** with the PID, executable,
 command line, and confirmation. It refuses to terminate unrelated listeners.
 
 ## Password Is Requested Repeatedly
 
 Use Profile Authentication to confirm retention mode. Session retention ends
-when Tunnel Manager quits. OS-vault retention occurs only after a successful
+when TunManager quits. OS-vault retention occurs only after a successful
 SSH authentication and requires a working platform credential service.
 
 ## Remote Service Will Not Start
@@ -27,7 +27,7 @@ does not replace the tunnel's TCP/HTTP health result.
 
 ## App Window Does Not Recover After Sleep
 
-Wait for the tunnel and `/api/health` to recover. Tunnel Manager sends generic
+Wait for the tunnel and `/api/health` to recover. TunManager sends generic
 restoration events to an existing managed window; it does not create or focus
 a new window merely because the network recovered. Use **Open App** explicitly
 if the previous app window was closed.

@@ -13,7 +13,7 @@ after they occurred.
 
 Sound is enabled by default and can be disabled globally or overridden per
 tunnel. A local custom WAV may be selected; a missing/unplayable custom file
-falls back to Tunnel Manager's default sound.
+falls back to TunManager's default sound.
 
 ## Local File Bridge
 
@@ -23,7 +23,7 @@ command access.
 
 - New applications require a foreground pairing approval.
 - File access is limited to configured remote roots and canonical paths.
-- Executable/editor paths remain local to Tunnel Manager and are never sent to
+- Executable/editor paths remain local to TunManager and are never sent to
   the web application.
 - The first edit in a browser session downloads current remote content.
 - Repeated edits in that session reopen the same watched local working copy.

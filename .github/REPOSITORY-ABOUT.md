@@ -3,7 +3,7 @@
 Use these values for the public distribution repository's GitHub **About**
 panel:
 
-- **Description:** Portable Tunnel Manager downloads for secure OpenSSH tunnels, remote service health, desktop notifications, and local file workflows.
+- **Description:** Portable TunManager downloads for secure OpenSSH tunnels, remote service health, desktop notifications, and local file workflows.
 - **Website:** https://github.com/itechmate-uk/TunManager-dist/releases
 - **Topics:** `ssh`, `ssh-tunnel`, `port-forwarding`, `desktop-app`, `tunnel-manager`, `golang`, `windows`, `linux`, `macos`, `webview`
 

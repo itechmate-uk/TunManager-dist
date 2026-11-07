@@ -1,6 +1,6 @@
-# Tunnel Manager
+# TunManager
 
-Tunnel Manager is a free desktop utility for running secure OpenSSH local
+TunManager is a free desktop utility for running secure OpenSSH local
 port forwards without repeatedly typing long SSH commands. It groups tunnels
 by SSH backend, monitors connection and application health, can manage an
 optional remote service, and keeps frequently used browser apps and private
@@ -8,7 +8,7 @@ development services available from one tray application.
 
 [Download the latest release](https://github.com/itechmate-uk/TunManager-dist/releases)
 
-> **Withdrawn release:** Tunnel Manager `v0.1.9` was removed after Microsoft
+> **Withdrawn release:** TunManager `v0.1.9` was removed after Microsoft
 > Defender reported `Trojan:Win32/Wacatac.B!ml` for its Windows executable.
 > Do not restore, share, or run that version. Use the current release only.
 
@@ -51,7 +51,7 @@ development services available from one tray application.
 3. Extract it to a per-user application folder.
 4. On Windows, run `tunnelm.exe`. Use `tunnelm-cli.exe` for console diagnostics.
 5. Add an SSH profile, then add or import a tunnel for that profile.
-6. Start the tunnel. Tunnel Manager uses normal OpenSSH keys first and asks for
+6. Start the tunnel. TunManager uses normal OpenSSH keys first and asks for
    a password only when the SSH client reports that authentication is needed.
 
 Windows currently provides the complete manager, tray, WebView, notifications,
@@ -101,16 +101,16 @@ inert generic examples. They contain no credentials, private keys, server
 addresses, usernames, local development paths, runtime configuration, logs,
 bridge files, or notification state.
 
-Tunnel Manager stores normal configuration and machine-specific state in the
+TunManager stores normal configuration and machine-specific state in the
 current operating-system user's application-data directories. Updating or
 moving a portable binary does not replace that data.
 
 GitHub automatically adds “Source code” ZIP and tar links for every release
 tag. They cannot be hidden and contain this public distribution repository,
-not Tunnel Manager's private application source.
+not TunManager's private application source.
 
 ## License
 
-Tunnel Manager preview binaries are currently free to use under the bundled
+TunManager preview binaries are currently free to use under the bundled
 license. Application source code is not published in this distribution
 repository.
