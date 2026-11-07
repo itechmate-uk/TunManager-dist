@@ -6,7 +6,7 @@ by SSH backend, monitors connection and application health, can manage an
 optional remote service, and keeps frequently used browser apps and private
 development services available from one tray application.
 
-[Download the latest release](https://github.com/itechmate-uk/ssh-tunnel-manager-dists/releases)
+[Download the latest release](https://github.com/itechmate-uk/TunManager-dist/releases)
 
 > **Withdrawn release:** Tunnel Manager `v0.1.9` was removed after Microsoft
 > Defender reported `Trojan:Win32/Wacatac.B!ml` for its Windows executable.
@@ -46,7 +46,7 @@ development services available from one tray application.
 ## Quick Start
 
 1. Download the archive for your operating system from
-   [GitHub Releases](https://github.com/itechmate-uk/ssh-tunnel-manager-dists/releases).
+   [GitHub Releases](https://github.com/itechmate-uk/TunManager-dist/releases).
 2. Verify it against the release `SHA256SUMS.txt`.
 3. Extract it to a per-user application folder.
 4. On Windows, run `tunnelm.exe`. Use `tunnelm-cli.exe` for console diagnostics.
