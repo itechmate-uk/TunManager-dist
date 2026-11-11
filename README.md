@@ -45,13 +45,15 @@ development services available from one tray application.
 
 ## Quick Start
 
-1. Download the archive for your operating system from
+1. Check [What To Install](docs/requirements.md) for your system (usually
+   nothing: OpenSSH is built in on current Windows, macOS and Linux desktops).
+2. Download the archive for your operating system from
    [GitHub Releases](https://github.com/itechmate-uk/TunManager-dist/releases).
-2. Verify it against the release `SHA256SUMS.txt`.
-3. Extract it to a per-user application folder.
-4. On Windows, run `tunnelm.exe`. Use `tunnelm-cli.exe` for console diagnostics.
-5. Add an SSH profile, then add or import a tunnel for that profile.
-6. Start the tunnel. TunManager uses normal OpenSSH keys first and asks for
+3. Verify it against the release `SHA256SUMS.txt`.
+4. Extract it to a per-user application folder.
+5. On Windows, run `tunnelm.exe`. Use `tunnelm-cli.exe` for console diagnostics.
+6. Add an SSH profile, then add or import a tunnel for that profile.
+7. Start the tunnel. TunManager uses normal OpenSSH keys first and asks for
    a password only when the SSH client reports that authentication is needed.
 
 Windows currently provides the complete manager, tray, WebView, notifications,
@@ -61,6 +63,7 @@ parity is planned and must not be inferred from the availability of an archive.
 
 ## Documentation
 
+- [What To Install](docs/requirements.md)
 - [Installation And Updates](docs/installation.md)
 - [Getting Started](docs/getting-started.md)
 - [SSH Authentication And Managed Keys](docs/ssh-authentication.md)

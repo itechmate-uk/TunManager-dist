@@ -1,5 +1,8 @@
 # Platform Support
 
+What each system needs installed (usually nothing) is in
+[What To Install](requirements.md).
+
 ## Windows
 
 Windows `amd64` is the current complete desktop release. Its archive contains:
