@@ -55,9 +55,21 @@ On macOS, if Gatekeeper blocks the verified unsigned file, use Finder's
 **Control-click > Open** flow or the corresponding Privacy & Security approval.
 Do not disable Gatekeeper globally.
 
-The current Linux and macOS archives are command-only preview builds. They do
-not yet contain the native manager/tray desktop experience available on
-Windows.
+The `tunnelm_*` Linux and macOS archives are the command interface. The
+manager window for Linux and macOS is the separate release "TunManager
+desktop VERSION" (tag `tunnelm-desktop-vVERSION`):
+
+- Linux (amd64): `tunnelm-desktop_VERSION_linux_amd64.tar.gz`. It needs
+  WebKitGTK 4.1 (`sudo apt install libwebkit2gtk-4.1-0`; Fedora:
+  `sudo dnf install webkit2gtk4.1`). Extract it and run `./tunnelm-desktop`.
+- macOS 12 or later (Apple silicon and Intel):
+  `tunnelm-desktop_VERSION_macos_universal.zip`. Unzip it, move
+  TunManager.app to Applications and open it; the first time, allow it in
+  System Settings > Privacy & Security ("Open Anyway"). The archive's
+  README.md shows each step.
+
+Verify each archive against that release's `SHA256SUMS.txt`. The desktop
+window's Update button installs the next desktop release in place.
 
 ## Updating
 

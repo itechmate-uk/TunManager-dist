@@ -18,24 +18,28 @@ services, and Local File Bridge workflows.
 
 ## Linux
 
-Current Linux `amd64` and `arm64` archives are basic command builds. They can
-validate configuration and run supported CLI workflows, but the native manager
-window and tray adapter are not implemented in the current release.
+Since v0.1.56 the Linux manager window is the release "TunManager desktop
+VERSION" (`tunnelm-desktop_VERSION_linux_amd64.tar.gz`, amd64, WebKitGTK 4.1):
+the same window and tabs as on Windows, a tray icon (GNOME needs the
+AppIndicator extension; Ubuntu has it on), app windows, notifications,
+autostart, the system keyring, Open with (rclone mount, FileZilla, the file
+manager, VS Code) and in-place updates. Not yet: DEB/RPM, AppImage or Flatpak
+packages.
 
-Planned desktop parity includes a native manager/tray, supported WebView,
-Secret Service, desktop notifications, sound, file pickers, autostart,
-URL/file opening, DEB/RPM packages, and native interactive testing on
-Debian/Ubuntu and Fedora/RHEL-compatible desktops.
+The `tunnelm_*` Linux `amd64` and `arm64` archives are command builds: they
+validate configuration and run the CLI workflows without a window.
 
 ## macOS
 
-Current macOS Intel and Apple Silicon archives are basic command builds. The
-native manager/menu-bar and app-window adapter are not implemented in the
-current release.
+Since v0.1.56 the macOS manager window is the same release
+(`tunnelm-desktop_VERSION_macos_universal.zip`, macOS 12 or later, Apple
+silicon and Intel): TunManager.app with the same window and tabs, a menu bar
+icon, app windows, notifications, the Keychain and in-place
+updates. It is signed ad hoc, not with an Apple Developer ID, so the first
+start asks you to allow it in System Settings > Privacy & Security. Not yet: a
+signed installer; rclone mounts need macFUSE or FUSE-T.
 
-Planned parity includes manager/menu-bar lifecycle, native WebView, Keychain,
-notifications, sound, file dialogs, OpenSSH integration, autostart,
-sleep/network recovery, Intel/Apple Silicon packaging, and real-hardware QA.
+The `tunnelm_*` macOS Intel and Apple Silicon archives are command builds.
 
 Cross-compilation and CI prove that code builds; they do not prove desktop
 behavior. macOS release certification requires a real Mac because WebView,

@@ -56,10 +56,14 @@ development services available from one tray application.
 7. Start the tunnel. TunManager uses normal OpenSSH keys first and asks for
    a password only when the SSH client reports that authentication is needed.
 
-Windows currently provides the complete manager, tray, WebView, notifications,
-authentication, remote-service, and Local File Bridge experience. Linux and
-macOS archives currently provide the command interface only; native desktop
-parity is planned and must not be inferred from the availability of an archive.
+Windows provides the complete manager, tray, WebView, notifications,
+authentication, remote-service, and Local File Bridge experience. Since
+v0.1.56 Linux (amd64) and macOS 12 or later (Apple silicon and Intel) have the
+manager window too, as the separate release "TunManager desktop VERSION"
+(`tunnelm-desktop_VERSION_linux_amd64.tar.gz`,
+`tunnelm-desktop_VERSION_macos_universal.zip`); see
+[Platform Support](docs/platform-support.md). The `tunnelm_*` Linux and macOS
+archives remain the command interface.
 
 ## Documentation
 
